@@ -2,8 +2,6 @@ package leetcode;
 
 import static org.junit.Assert.assertArrayEquals;
 
-import java.util.stream.Stream;
-
 import org.junit.Test;
 
 public class CountBits {
