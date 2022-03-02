@@ -103,4 +103,28 @@ public class TreeNode {
         return null;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        TreeNode obj = (TreeNode) o;
+
+        if (this == null && obj == null)
+            return true;
+        if (this == null || obj == null)
+            return false;
+        if (this.val != obj.val)
+            return false;
+        return this.left.equals(obj.left) && this.right.equals(obj.right);
+    }
+
+    @Override
+    public int hashCode() {
+        return this.val;
+    }
+
 }
