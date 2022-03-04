@@ -40,16 +40,18 @@ public class ListNode {
         }
         ListNode obj = (ListNode) o;
 
-        if (this.val != obj.val)
-            return false;
+        return equals(this, obj);
+    }
 
-        if (this.next == null && obj.next == null)
+    public boolean equals(ListNode node1, ListNode node2) {
+        if (node1 == node2) {
             return true;
-
-        if ((this.next == null && obj.next != null) || (this.next != null && obj.next == null))
+        }
+        if (node1 == null || node2 == null) {
             return false;
-
-        return this.next.equals(obj.next);
+        }
+        return node1.val == node2.val &&
+                equals(node1.next, node2.next);
     }
 
     @Override

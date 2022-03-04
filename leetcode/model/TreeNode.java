@@ -116,16 +116,16 @@ public class TreeNode {
         return equals(this, obj);
     }
 
-    public boolean equals(TreeNode tree1, TreeNode tree2) {
-        if (tree1 == tree2) {
+    public boolean equals(TreeNode node1, TreeNode node2) {
+        if (node1 == node2) {
             return true;
         }
-        if (tree1 == null || tree2 == null) {
+        if (node1 == null || node2 == null) {
             return false;
         }
-        return tree1.val == tree2.val &&
-                equals(tree1.left, tree2.left) &&
-                equals(tree1.right, tree2.right);
+        return node1.val == node2.val &&
+                equals(node1.left, node2.left) &&
+                equals(node1.right, node2.right);
     }
 
     @Override
