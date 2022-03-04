@@ -13,7 +13,7 @@ public class IsSubtree {
     public boolean isSubtree(TreeNode root, TreeNode subRoot) {
 
         if (false)
-            System.out.println("not solved, dit not submitted");
+            System.out.println("not solved, did not submitted");
 
         if (equals(root, subRoot))
             return true;
