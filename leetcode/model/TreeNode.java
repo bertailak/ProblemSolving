@@ -113,13 +113,19 @@ public class TreeNode {
         }
         TreeNode obj = (TreeNode) o;
 
-        if (this == null && obj == null)
+        return equals(this, obj);
+    }
+
+    public boolean equals(TreeNode tree1, TreeNode tree2) {
+        if (tree1 == tree2) {
             return true;
-        if (this == null || obj == null)
+        }
+        if (tree1 == null || tree2 == null) {
             return false;
-        if (this.val != obj.val)
-            return false;
-        return this.left.equals(obj.left) && this.right.equals(obj.right);
+        }
+        return tree1.val == tree2.val &&
+                equals(tree1.left, tree2.left) &&
+                equals(tree1.right, tree2.right);
     }
 
     @Override
