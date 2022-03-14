@@ -11,9 +11,6 @@ public class CoinChange {
     // https://leetcode.com/problems/coin-change/
 
     public int coinChange(int[] coins, int amount) {
-        if (amount == 0)
-            return 0;
-
         int[] counts = new int[amount + 1];
         Arrays.fill(counts, Integer.MAX_VALUE);
         counts[0] = 0;
