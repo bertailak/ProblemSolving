@@ -1,9 +1,13 @@
 package leetcode.design;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Deque;
 import java.util.LinkedList;
 
-class MyStack {
+import org.junit.Test;
+
+public class MyStack {
 
     // https://leetcode.com/problems/implement-stack-using-queues/
 
@@ -27,5 +31,15 @@ class MyStack {
 
     public boolean empty() {
         return deque.isEmpty();
+    }
+
+    @Test
+    public void test1() {
+        MyStack stack = new MyStack();
+        stack.push(1);
+        stack.push(2);
+        assertEquals(2, stack.top());
+        assertEquals(2, stack.pop());
+        assertEquals(false, stack.empty());
     }
 }
