@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Stack;
-
 import leetcode.model.ListNode;
 
 public class GetIntersectionNode {
