@@ -1,6 +1,6 @@
 package leetcode;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 
@@ -28,6 +28,6 @@ public class Transpose {
         int[][] matrix = new int[][] { { 1, 2, 3 }, { 4, 5, 6 } };
         int[][] expected = new int[][] { { 1, 4 }, { 2, 5 }, { 3, 6 } };
         int[][] actual = transpose(matrix);
-        assertEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 }
