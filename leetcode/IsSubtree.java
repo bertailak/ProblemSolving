@@ -2,6 +2,9 @@ package leetcode;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 import org.junit.Test;
 
 import leetcode.model.TreeNode;
@@ -15,26 +18,45 @@ public class IsSubtree {
         if (false)
             System.out.println("not solved, did not submitted");
 
-        if (equals(root, subRoot))
-            return true;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode top = queue.poll();
+            if (top.val == subRoot.val) {
+                if (isIdentical(top, subRoot))
+                    return true;
+            }
 
-        return equals(root.left, subRoot) || equals(root.right, subRoot);
+            if (top.left != null)
+                queue.add(top.left);
+            if (top.right != null)
+                queue.add(top.right);
+
+        }
+
+        return false;
 
     }
 
-    public boolean equals(TreeNode node1, TreeNode node2) {
-        if (node1 == node2) {
-            return true;
-        }
-        if (node1 == null && node2 == null) {
-            return true;
-        }
-        if (node1 == null || node2 == null) {
+    public boolean isIdentical(TreeNode node1, TreeNode node2) {
+
+        if (!(node1.left == null && node2.left == null)
+                || ((node1.left == null)
+                        || (node2.left == null)
+                        || node1.left.val != node2.left.val
+                        || (!isIdentical(node1.left, node2.left)))) {
             return false;
         }
-        return node1.val == node2.val &&
-                equals(node1.left, node2.left) &&
-                equals(node1.right, node2.right);
+
+        if ((node1.right != null && node2.right != null)
+                && ((node1.right == null)
+                        || (node1.right != null)
+                        || node1.right.val != node2.right.val
+                        || (!isIdentical(node1.right, node2.right)))) {
+            return false;
+        }
+
+        return true;
     }
 
     @Test
