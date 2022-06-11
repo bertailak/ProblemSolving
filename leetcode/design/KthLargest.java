@@ -6,7 +6,7 @@ public class KthLargest {
 
     // https://leetcode.com/problems/kth-largest-element-in-a-stream/
 
-    private static int k;
+    private int k;
     private PriorityQueue<Integer> heap;
     
     public KthLargest(int k, int[] nums) {
