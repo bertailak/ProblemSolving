@@ -13,7 +13,7 @@ public class MinimumTotal {
 
     public int minimumTotal(List<List<Integer>> triangle) {
         List<List<Integer>> result = new ArrayList<>();
-        for (int i = 0; i < triangle.size() - 1; i++) {
+        for (int i = 0; i < triangle.size(); i++) {
 
             List<Integer> list = new ArrayList<>(i + 1);
 
@@ -23,26 +23,24 @@ public class MinimumTotal {
 
             result.add(list);
         }
-        result.add(triangle.get(triangle.size() - 1));
+        result.get(0).set(0, triangle.get(0).get(0));
 
-        for (int i = triangle.size() - 1; i > 0; i--) {
-
+        for (int i = 0; i < triangle.size() - 1; i++) {
             for (int j = 0; j < triangle.get(i).size(); j++) {
-
-                if (j < triangle.get(i).size() - 1) {
-                    result.get(i - 1).set(j,
-                            Math.min(result.get(i - 1).get(j), result.get(i).get(j) + triangle.get(i - 1).get(j)));
-                }
-                if (j > 0) {
-                    result.get(i - 1).set(j - 1,
-                            Math.min(result.get(i - 1).get(j - 1),
-                                    result.get(i).get(j) + triangle.get(i - 1).get(j - 1)));
-                }
+                result.get(i + 1).set(j,
+                        Math.min(result.get(i + 1).get(j), result.get(i).get(j) + triangle.get(i + 1).get(j)));
+                result.get(i + 1).set(j + 1,
+                        Math.min(result.get(i + 1).get(j + 1),
+                                result.get(i).get(j) + triangle.get(i + 1).get(j + 1)));
             }
+        }
+        int minPath = result.get(result.size() - 1).get(0);
 
+        for (int element : result.get(result.size() - 1)) {
+            minPath = Math.min(minPath, element);
         }
 
-        return result.get(0).get(0);
+        return minPath;
     }
 
     @Test
