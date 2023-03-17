@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class Trie {
+
+    // https://leetcode.com/problems/implement-trie-prefix-tree/
+
     public Trie[] alphabet;
     public boolean isEnd;
 
