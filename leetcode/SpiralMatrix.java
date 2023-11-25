@@ -8,7 +8,7 @@ import leetcode.model.ListNode;
 
 public class SpiralMatrix {
 
-    // https://leetcode.com/contest/weekly-contest-300/problems/spiral-matrix-iv/
+    // https://leetcode.com/problems/spiral-matrix-iv/
 
     public int[][] spiralMatrix(int m, int n, ListNode head) {
         int[][] matrix = new int[m][n];

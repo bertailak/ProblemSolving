@@ -6,6 +6,8 @@ import org.junit.Test;
 
 public class LongestContinuousSubstring {
 
+    // https://leetcode.com/problems/length-of-the-longest-alphabetical-continuous-substring/
+
     public int longestContinuousSubstring(String s) {
         int left = 0;
         int right = 1;

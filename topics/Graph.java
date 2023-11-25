@@ -1,7 +1,9 @@
 package topics;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Stack;
 
 public class Graph {
@@ -68,6 +70,28 @@ public class Graph {
             System.out.print(stack.pop() + " ");
     }
 
+    public static HashMap<String, HashMap<String, Integer>> getMap() {
+        HashMap<String, HashMap<String, Integer>> map = new HashMap<>();
+
+        // TC O(data.size* Max(data.element.size()))
+        // MC O(data.size*data.size + data.size)
+
+        List<List<String>> data = new ArrayList<>();
+        data.add(List.of("I", "am"));
+        data.add(List.of("I", "so"));
+        data.add(List.of("I", "am"));
+
+        for (List<String> sentence : data) {
+            for (int i = 0; i < sentence.size() - 1; i++) {
+                HashMap<String, Integer> words = map.getOrDefault(sentence.get(i), new HashMap<>());
+                words.put(sentence.get(i + 1), words.getOrDefault(sentence.get(i + 1), 0) + 1);
+                map.put(sentence.get(i), words);
+            }
+        }
+
+        return map;
+    }
+
     // Driver code
     public static void main(String args[]) {
         // Create a graph given in the above diagram
@@ -82,6 +106,8 @@ public class Graph {
         System.out.println("Following is a Topological "
                 + "sort of the given graph");
         // Function Call
-        g.topologicalSort();
+        // g.topologicalSort();
+
+        getMap();
     }
 }

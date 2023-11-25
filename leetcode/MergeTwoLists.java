@@ -2,9 +2,6 @@ package leetcode;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Test;
 
 import leetcode.model.ListNode;
@@ -14,34 +11,29 @@ public class MergeTwoLists {
     // https://leetcode.com/problems/merge-two-sorted-lists/
 
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        List<Integer> l = new ArrayList<>();
+        ListNode dummy = new ListNode();
+        ListNode head = dummy;
 
         while (list1 != null || list2 != null) {
             if (list1 != null && list2 != null) {
                 if (list1.val < list2.val) {
-                    l.add(list1.val);
+                    head.next = list1;
                     list1 = list1.next;
                 } else {
-                    l.add(list2.val);
+                    head.next = list2;
                     list2 = list2.next;
                 }
             } else if (list1 != null) {
-                l.add(list1.val);
+                head.next = list1;
                 list1 = list1.next;
             } else if (list2 != null) {
-                l.add(list2.val);
+                head.next = list2;
                 list2 = list2.next;
             }
+            head = head.next;
         }
 
-        ListNode list = null;
-        if (l.size() > 0) {
-            list = new ListNode(l.get(l.size() - 1));
-            for (int i = l.size() - 2; i >= 0; i--) {
-                list = new ListNode(l.get(i), list);
-            }
-        }
-        return list;
+        return dummy.next;
     }
 
     @Test

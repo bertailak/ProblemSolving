@@ -58,4 +58,18 @@ public class ListNode {
     public int hashCode() {
         return this.val;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        ListNode copy = this;
+        while (copy != null) {
+            sb.append(copy.val + ", ");
+            copy = copy.next;
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        sb.deleteCharAt(sb.length() - 1);
+
+        return sb.toString();
+    }
 }
