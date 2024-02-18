@@ -3,7 +3,6 @@ package leetcode;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
-import java.util.PriorityQueue;
 
 import org.junit.Test;
 
