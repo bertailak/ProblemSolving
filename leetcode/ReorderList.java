@@ -18,7 +18,6 @@ public class ReorderList {
 
         while (node != null || inverted != null) {
             ListNode next = node.next;
-            ListNode invNext = inverted.next;
 
             inverted.next = next;
             node.next = inverted;

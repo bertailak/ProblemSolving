@@ -3,6 +3,7 @@ package leetcode;
 import java.util.List;
 
 public class MaxValueOfCoins {
+
     public int maxValueOfCoins(List<List<Integer>> piles, int k) {
         int[][] dp = new int[piles.size()][piles.get(0).size()];
 
@@ -16,4 +17,5 @@ public class MaxValueOfCoins {
 
         return 0;
     }
+    
 }

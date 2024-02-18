@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-import org.junit.Test;
-
 public class PacificAtlantic {
 
     // https://leetcode.com/problems/pacific-atlantic-water-flow/
@@ -79,12 +77,6 @@ public class PacificAtlantic {
         }
 
         return result;
-    }
-
-    @Test
-    public void test1() {
-        List<List<Integer>> actual = pacificAtlantic(new int[][] { { 1, 2, 2, 3, 5 }, { 3, 2, 3, 4, 4 },
-                { 2, 4, 5, 3, 1 }, { 6, 7, 1, 4, 5 }, { 5, 1, 1, 2, 4 } });
-    }
+        }
 
 }

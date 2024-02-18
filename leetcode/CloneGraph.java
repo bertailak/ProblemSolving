@@ -1,8 +1,6 @@
 package leetcode;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 import leetcode.model.Node;
 

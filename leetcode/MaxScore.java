@@ -2,10 +2,7 @@ package leetcode;
 
 import static org.junit.Assert.assertEquals;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Test;
 
