@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.contest.contest00385;
 
 import static org.junit.Assert.assertEquals;
 

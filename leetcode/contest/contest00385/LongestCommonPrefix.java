@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.contest.contest00385;
 
 import static org.junit.Assert.assertEquals;
 
@@ -49,7 +49,6 @@ public class LongestCommonPrefix {
                 numbers[i] = null;
             }
         }
-
     }
 
     public int longestCommonPrefix2(int[] arr1, int[] arr2) {
