@@ -8,9 +8,8 @@ public class ShortestSubstrings {
 
     public String[] shortestSubstrings(String[] arr) {
         String[] answer = new String[arr.length];
-        for (int i = 0; i < answer.length; i++) {
+        for (int i = 0; i < answer.length; i++)
             answer[i] = "";
-        }
 
         for (int i = 0; i < arr.length; i++) {
 
@@ -27,11 +26,12 @@ public class ShortestSubstrings {
                         found = true;
                         break;
                     }
-                    if (!found) {
-                        if (answer[i].length() == 0 || answer[i].length() > sub.length()
-                                || answer[i].length() == sub.length() && answer[i].compareTo(sub) > 0) {
-                            answer[i] = sub;
-                        }
+                    if (found)
+                        continue;
+
+                    if (answer[i].length() == 0 || answer[i].length() > sub.length()
+                            || (answer[i].length() == sub.length() && answer[i].compareTo(sub) > 0)) {
+                        answer[i] = sub;
                     }
                 }
             }
