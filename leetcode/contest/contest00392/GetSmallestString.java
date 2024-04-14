@@ -7,6 +7,7 @@ import org.junit.Test;
 public class GetSmallestString {
 
     public String getSmallestString(String s, int k) {
+
         StringBuilder sb = new StringBuilder();
         int i = 0;
         while (i < s.length()) {
@@ -24,7 +25,6 @@ public class GetSmallestString {
         }
 
         return sb.toString();
-
     }
 
     @Test
