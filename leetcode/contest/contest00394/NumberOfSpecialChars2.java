@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class NumberOfSpecialChars2 {
+    
     public int numberOfSpecialChars(String word) {
         int[] lowerAlphabet = new int[26];
         int[] upperAlphabet = new int[26];
