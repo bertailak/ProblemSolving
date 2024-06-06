@@ -4,12 +4,26 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import org.junit.Test;
 
 public class UrlParser {
 
-    public List<String> getUrlParams(String url) {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String url = sc.next();
+
+        List<String> list = getUrlParams(url);
+
+        for (String l : list) {
+            System.out.println(l);
+        }
+
+        sc.close();
+    }
+
+    public static List<String> getUrlParams(String url) {
         List<String> result = new ArrayList<>();
         String[] mainParts = url.split("\\?");
 
@@ -20,7 +34,7 @@ public class UrlParser {
         return result;
     }
 
-    private void getMainPart(String url, List<String> list) {
+    private static void getMainPart(String url, List<String> list) {
 
         String proto = "http";
         String host = "";
@@ -50,7 +64,7 @@ public class UrlParser {
         }
     }
 
-    private void getSecondPart(String url, List<String> list) {
+    private static void getSecondPart(String url, List<String> list) {
         String[] params = url.split("&");
         for (int i = 0; i < params.length; i++) {
             String[] p = params[i].split("=");
